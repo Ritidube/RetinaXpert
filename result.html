@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Prediction Result</title>
+    <style>
+        body { font-family: Arial; text-align:center; padding:40px; background:#f0f5f9; }
+        .container { background:white; padding:30px; border-radius:12px; display:inline-block; }
+        img { width:300px; border-radius:10px; margin-bottom:20px; }
+        .label { font-size:22px; font-weight:bold; }
+        .dr { color:#e63946; }
+        .nodr { color:#2a9d8f; }
+    </style>
+</head>
+<body>
+
+    <h1>Prediction Result</h1>
+
+    <div class="container">
+        <img src="{{ image_path }}" alt="Uploaded Image">
+
+        <p class="label {% if label == 'DR' %} dr {% else %} nodr {% endif %}">
+            Prediction: {{ label }}
+        </p>
+
+        <p>Probability (DR): {{ probability }}</p>
+
+        <a href="/" style="text-decoration:none;">
+            <button style="padding:10px 20px; background:#007bff; color:white; border:none; border-radius:5px;">
+                Upload Another Image
+            </button>
+        </a>
+    </div>
+
+</body>
+</html>
